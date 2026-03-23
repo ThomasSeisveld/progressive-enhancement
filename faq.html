@@ -1,24 +1,87 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<title>Veelgestelde vragen / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Veelgestelde vragen / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		details {
+			border: 1px solid #cfcfcf;
+			border-radius: 8px;
+			margin-bottom: 12px;
+			background: #fff;
+		}
 
-			/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
-		</style>
-	</head>
-	<body>
-		<h1>Veelgestelde vragen</h1>
+		summary {
+			position: relative;
+			width: fit-content;
+			padding: 14px 16px;
+			cursor: pointer;
+			list-style: none;
+			display: flex;
+			align-items: center;
+			font-size: 16px;
 
+			&::marker {
+				content: "+";
+			}
 
-		<!-- Content (waar nog wat HTML omheen moet 😄):
+			&::before {
+				content: "+";
+				margin-right: 10px;
+				font-weight: bold;
+				font-size: 18px;
+
+			}
+
+			&::after {
+				transform: rotate(90deg);
+				transform-origin: 50%;
+				transition: transform 0.3s ease;
+			}
+		}
+
+		details[open] {
+			background-color: rgb(255, 132, 87);
+
+			summary::before {
+				content: "×";
+				transform: rotate(0deg);
+			}
+		}
+		p {
+			padding: 0 16px 16px;
+			margin: 0;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		/* Schrijf hier gewoon je CSS voor dit component */
+
+		/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+
+		/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
+	</style>
+</head>
+
+<body>
+	<h1>Veelgestelde vragen</h1>
+
+	<details>
+		<summary>wat is frontend development?</summary>
+		<p>Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij
+			ons, je hebt dus geen voorkennis nodig.</p>
+	</details>
+	<details>
+		<summary>moet ik al kunnen coderen?</summary>
+	</details>
+	<details>
+		<summary>wat is een Associate degree</summary>
+	</details>
+	<!-- Content (waar nog wat HTML omheen moet 😄):
 		Wat is frontend development?
 		Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
 
@@ -31,12 +94,13 @@
 		-->
 
 
-		<!-- Hint: Dit stukje HTML geeft het misschien al weg :) -->
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/faq.mp4" width="765" height="769" controls muted autoplay loop>
-				<a href="assets/faq.mp4">assets/faq.mp4</a>
-			</video>
-		</details>
-	</body>
+	<!-- Hint: Dit stukje HTML geeft het misschien al weg :) -->
+	<details open>
+		<summary>Demo video</summary>
+		<video src="assets/faq.mp4" width="765" height="769" controls muted autoplay loop>
+			<a href="assets/faq.mp4">assets/faq.mp4</a>
+		</video>
+	</details>
+</body>
+
 </html>
