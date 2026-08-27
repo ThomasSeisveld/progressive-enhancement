@@ -1,35 +1,73 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<title>Switch control / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Switch control / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
-		</style>
-	</head>
-	<body>
-		<h1>Switch control</h1>
-		
-		<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
+		input[type="checkbox"] {
+			appearance: none;
+			background-color: grey;
+			border-radius: 1.8em;
+			width: 7em;
+			padding: 0.3em;
+
+			cursor: pointer;
+			font-weight: 700;
+
+			&:checked {
+				background-color: var(--green);
+			}
+
+			&::after {
+				content: "aan";
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 3em;
+				border-radius: 1.8em;
+				aspect-ratio: 1;
+				background-color: white;
+				color: transparent;
+
+				transition: .3s;
+			}
+
+			&:checked::after {
+				translate: 3.4em;
+				color: black;
+			}
+		}
+
+		/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+
+		/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
+	</style>
+</head>
+
+<body>
+	<h1>Switch control</h1>
+
+	<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
 		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
 
-			<label>
-				<input type="checkbox" name="" id="">
-			</label>
+	<label>
+		<input type="checkbox" name="" id="">
+	</label>
 
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
-				<a href="assets/switch.mp4">assets/switch.mp4</a>
-			</video>
-		</details>
-	</body>
+	<details open>
+		<summary>Demo video</summary>
+		<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
+			<a href="assets/switch.mp4">assets/switch.mp4</a>
+		</video>
+	</details>
+</body>
+
 </html>
