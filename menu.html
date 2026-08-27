@@ -11,6 +11,105 @@
 	<style>
 		/* Schrijf hier gewoon je CSS voor dit component */
 		
+		body {
+			transform: none;
+			transition: transform 0.3s ease;
+		}
+
+		p {
+			transition: transform 0.3s ease;
+			transform-origin: right;
+		}
+
+		/* Veranderd de body als JS gebruikt kan worden */
+		body.menu-is-open {
+			background-color: grey;
+		}
+
+		/* Veranderd de 'p's in de body als JS gebruikt kan worden */
+		body.menu-is-open p {
+			transform: scaleX(0.9);
+		}
+
+		/* Menu-link om lijst met menu items te openen */
+		.open-button {
+			padding: 0.3em 0.5em;
+			background-color: #050542;
+			color: #66E5BF;
+			text-decoration: none;
+			border-radius: 10px;
+		}
+
+		ul {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 275px;
+			height: 100dvh;
+
+			translate: -105% 0;
+			display: grid;
+			align-content: start;
+			margin: 0;
+			padding: 0.5em 0;
+			list-style-type: none;
+			background-color: #66E5BF;
+			transition: translate 0.3s ease;
+			z-index: 10;
+		}
+
+		ul li:nth-of-type(1) {
+			justify-self: end;
+
+			margin: 0;
+			padding: 0;
+		}
+
+		ul li:nth-of-type(1) a {
+			padding: 0.25em 0.5em;
+		}
+
+		ul li:nth-of-type(1) a:hover,
+		ul li:nth-of-type(1) a:focus {
+			background-color: transparent;
+			color: #050542;
+		}
+
+		ul li svg {
+			display: block;
+			width: 32px;
+			height: 32px;
+		}
+
+		ul li svg path {
+			fill: #000;
+		}
+
+
+		ul li a {
+			display: block;
+			padding: 0.75em 0.85em;
+			color: #050542;
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		ul li a:hover,
+		ul li a:focus {
+			background-color: #050542;
+			color: #66E5BF;
+		}
+
+		/* Ruimte tussen menu */
+		ul li+li {
+			margin-top: 0.45em;
+		}
+
+		/* Menu openenknop */
+		:target {
+			translate: 0;
+		}
+
 
 		/* Hint: kijk eens naar :target
 			   https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
