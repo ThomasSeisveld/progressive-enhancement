@@ -10,7 +10,7 @@
 	<link href="assets/styles.css" rel="stylesheet">
 	<style>
 		/* Schrijf hier gewoon je CSS voor dit component */
-		
+
 		body {
 			transform: none;
 			transition: transform 0.3s ease;
@@ -29,7 +29,7 @@
 			transform: scaleX(0.9);
 		}
 
-		
+
 		.open-button {
 			padding: 0.3em 0.5em;
 			background-color: #050542;
@@ -114,7 +114,20 @@
 	</style>
 	<script type="module">
 		/* Schrijf hier eventueel je client-side JavaScript */
+		const openButton = document.querySelector('.open-button')
+		const closeButton = document.querySelector('.close-button')
+		const body = document.body
 
+		openButton.addEventListener('click', addClass)
+		closeButton.addEventListener('click', removeClass)
+
+		function addClass() {
+			body.classList.add('menu-is-open')
+		}
+
+		function removeClass() {
+			body.classList.remove('menu-is-open')
+		}
 		/* Hint: dit component kan volledig met CSS, maar met JS kun je 'm enhancen */
 	</script>
 </head>
